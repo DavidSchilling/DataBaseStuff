@@ -6,6 +6,7 @@ public class Person
 	private int age;
 	private String birthDate;
 	private String deathDate;
+	private boolean isMarried;
 
 	/* ****************** GETTERS ******************* */
 	public String getName()
@@ -26,6 +27,11 @@ public class Person
 	public String getDeathDate()
 	{
 		return deathDate;
+	}
+	
+	public boolean isMarried()
+	{
+		return isMarried();
 	}
 
 	/* ******************* SETTERS ******************** */
@@ -48,6 +54,11 @@ public class Person
 	public void setDeathDate(String deathDate)
 	{
 		this.deathDate = deathDate;
+	}
+	
+	public void setIsMarried(boolean isMarried)
+	{
+		this.isMarried = isMarried;
 	}
 
 	/**

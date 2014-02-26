@@ -2,6 +2,8 @@ package view;
 
 import javax.swing.*;
 
+import model.Person;
+
 import controller.AppController;
 
 public class DatabasePanel extends JPanel
@@ -66,7 +68,7 @@ public class DatabasePanel extends JPanel
 
 		baseLayout.putConstraint(SpringLayout.NORTH, textArea, -2, SpringLayout.NORTH, firstTextField);
 		baseLayout.putConstraint(SpringLayout.WEST, textArea, 6, SpringLayout.EAST, firstTextField);
-		
+
 		baseLayout.putConstraint(SpringLayout.NORTH, firstButton, 28, SpringLayout.SOUTH, fourthTextField);
 		baseLayout.putConstraint(SpringLayout.WEST, firstButton, 10, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.EAST, firstButton, -373, SpringLayout.EAST, this);
@@ -80,4 +82,35 @@ public class DatabasePanel extends JPanel
 
 	}
 
+	private boolean checkInteger(String current)
+	{
+		boolean isInteger = false;
+
+		try
+		{
+			Integer.parseInt(current);
+			isInteger = true;
+		} catch (NumberFormatException robert)
+		{
+			JOptionPane.showMessageDialog(this,
+					"Number format is wrong\ncheck the age to make sure that it is a valid number.");
+		}
+
+		return isInteger;
+	}
+	
+	private Person createPersonFromInput(String name, String age, String birthDate, String deathDate, boolean isMarried)
+	{
+		Person deadGuy = new Person();
+		deadGuy.setName(name);
+		if(checkInteger(age))
+		{
+			int newAge = Integer.parseInt(age);
+			deadGuy.setAge(newAge);
+		}
+		deadGuy.setDeathDate(deathDate);
+		deadGuy.setBirthDate(birthDate);
+		deadGuy.setIsMarried(isMarried);
+		return deadGuy;
+	}
 }
