@@ -57,6 +57,25 @@ public class DatabaseController
 			displaySQLErrors(currentException);
 		}
 	}
+	
+	public void closeConnection()
+	{
+		try
+		{
+			dataConnection.close();
+		}
+		catch(SQLException john)
+		{
+			displaySQLErrors(john);
+		}
+	}
+	
+	private void clearConnection()
+	{
+		closeConnection();
+		connectionString = "jdbc:mysql://localhost/?user=root";
+		setupConnection();
+	}
 
 	public void displaySQLErrors(SQLException current)
 	{

@@ -110,7 +110,6 @@ public class DatabasePanel extends JPanel
 		}
 		deadGuy.setDeathDate(deathDate);
 		deadGuy.setBirthDate(birthDate);
-		deadGuy.setIsMarried(isMarried);
 		return deadGuy;
 	}
 }

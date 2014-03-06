@@ -4,13 +4,6 @@ import java.util.ArrayList;
 
 public class GraveMarker
 {
-	// type of marker
-	// picture
-	// location
-	// people <>
-	// information
-	// isLegible
-
 	private String markerType;
 	private ArrayList<Person> gravePeople;
 	private boolean isLegible;
