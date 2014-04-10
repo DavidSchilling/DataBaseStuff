@@ -7,6 +7,7 @@ public class Person
 	private String birthDate;
 	private String deathDate;
 	private boolean isMarried;
+	private boolean hasChildren;
 
 	/* ****************** GETTERS ******************* */
 	public String getName()
@@ -29,9 +30,14 @@ public class Person
 		return deathDate;
 	}
 	
-	public boolean isMarried()
+	public boolean getIsMarried()
 	{
-		return isMarried();
+		return isMarried;
+	}
+	
+	public boolean getHasChildren()
+	{
+		return isMarried;
 	}
 
 	/* ******************* SETTERS ******************** */
@@ -59,6 +65,11 @@ public class Person
 	public void setIsMarried(boolean isMarried)
 	{
 		this.isMarried = isMarried;
+	}
+	
+	public void setHasChildren(boolean hasChildren)
+	{
+		this.hasChildren = hasChildren;
 	}
 
 	/**
